@@ -57,7 +57,7 @@
       );
     }
   };
-  var s = class {
+  var a = class {
     static required(t) {
       return (r) => e.required(r, t);
     }
@@ -102,12 +102,13 @@
     }
     static validate(t, r) {
       let n = [],
-        i = !0;
+        s = !0;
       for (let u of r) {
-        let a = u(t);
-        a.msg && n.push(a.msg), a.isValid || (i = !1);
+        let i = u(t);
+        i.msg && n.push(i.msg), i.isValid || (s = !1);
       }
-      return { isValid: i, messages: n };
+      return { isValid: s, messages: n };
     }
   };
+  var d = a;
 })();
