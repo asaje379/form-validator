@@ -1,6 +1,6 @@
 {
   "name": "@asaje/form-validator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "license": "MIT",
   "devDependencies": {
