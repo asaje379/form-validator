@@ -1,6 +1,7 @@
 import { StringOrNumber, ValidateResult, ValidatorEngine } from './engine';
 
 export type ValidatorFn = (value: StringOrNumber) => ValidateResult;
+export type ValidationResults = { isValid: boolean; messages: string[] };
 
 export class Validator {
   static required(msg?: string) {
@@ -71,7 +72,10 @@ export class Validator {
       ValidatorEngine.maxDate(limit, value, msg);
   }
 
-  static validate(value: StringOrNumber, validations: Array<ValidatorFn>) {
+  static validate(
+    value: StringOrNumber,
+    validations: Array<ValidatorFn>,
+  ): ValidationResults {
     const messages: string[] = [];
     let isValid = true;
 
