@@ -1,5 +1,9 @@
 import { StringOrNumber, ValidateResult } from './engine';
 export type ValidatorFn = (value: StringOrNumber) => ValidateResult;
+export type ValidationResults = {
+    isValid: boolean;
+    messages: string[];
+};
 export declare class Validator {
     static required(msg?: string): (value: StringOrNumber) => ValidateResult;
     static pattern(schema: string, msg?: string): (value: StringOrNumber) => ValidateResult;
@@ -15,8 +19,5 @@ export declare class Validator {
     static alphanum(msg?: string): (value: StringOrNumber) => ValidateResult;
     static minDate(limit: StringOrNumber, msg?: string): (value: StringOrNumber) => ValidateResult;
     static maxDate(limit: StringOrNumber, msg?: string): (value: StringOrNumber) => ValidateResult;
-    static validate(value: StringOrNumber, validations: Array<ValidatorFn>): {
-        isValid: boolean;
-        messages: string[];
-    };
+    static validate(value: StringOrNumber, validations: Array<ValidatorFn>): ValidationResults;
 }
