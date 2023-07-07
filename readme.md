@@ -7,13 +7,13 @@ A tool for easily validate a value based on specific schemas
 ## **Installation**
 
 ```bash
-npm i -D @asaje/form-validator
+npm i @asaje/form-validator
 ```
 
 or
 
 ```bash
-yarn add -D @asaje/form-validator
+yarn add @asaje/form-validator
 ```
 
 ## **How to use**
