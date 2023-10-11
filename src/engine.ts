@@ -53,7 +53,7 @@ export class ValidatorEngine {
   }
 
   static email(value?: string, msg: string = 'Invalid email') {
-    return ValidatorEngine.pattern('.+@.+..{2,8}', value, msg);
+    return ValidatorEngine.pattern(`.+@.+\..{2,8}`, value, msg);
   }
 
   static password(value?: string, msg: string = 'Password not strong enough') {
